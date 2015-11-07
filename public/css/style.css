@@ -1,0 +1,35 @@
+.top-bar {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    margin:0;
+}
+
+footer {
+    margin: 15px;
+    text-align: center;
+}
+
+.book {
+    text-align: center;
+
+}
+
+.price {
+    margin: 5px;
+    font-size: 18px;
+}
+
+.price span {
+    color: green;
+    background: #f4f4f4;
+    padding: 10px;
+    border:1px #ccc solid;
+    border-radius: 50%;
+}
+
+table .button {
+    margin-top: 0px;
+}

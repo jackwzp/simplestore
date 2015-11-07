@@ -1,0 +1,25 @@
+{>"layouts/master" /}
+
+{<body}
+    <div class="row">
+        <div class="large-4 columns">
+            <img src="/img/node1.jpeg" alt="">
+        </div>
+        <div class="large-8 columns">
+            <h2>Book Title</h2>
+            <ul class="bookinfo">
+                <li>Category: Nodejs</li>
+                <li>Author: John Doe</li>
+                <li>Publisher: Pearson</li>
+            </ul>
+            <br>
+            <div class="price"><span>$19.99</span></div>
+            <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam, inventore, non asperiores molestiae labore quis autem nisi, veniam perspiciatis porro hic saepe debitis doloribus commodi repellat impedit ab itaque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis inventore, similique, ad cupiditate ducimus totam sunt sapiente. Provident dignissimos, placeat ipsam nobis amet asperiores inventore excepturi, dicta minus maiores quis?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis non obcaecati at, optio tenetur cumque eos odio esse maiores! Quasi corrupti obcaecati, velit optio dignissimos numquam magni id atque.</p>
+            <a href="#" class="button success">Add to Cart</a>
+        </div>
+    </div>
+    
+
+
+{/body}

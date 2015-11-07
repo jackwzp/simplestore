@@ -22,10 +22,10 @@
                 <nav class="top-bar" data-topbar role="navigation">
                     <section class="top-bar-section">
                         <ul class="left">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Cart</a></li>
-                            <li><a href="#">Admin</a></li>
+                            <li><a href="/manage">Dashboard</a></li>
+                            <li><a href="/manage/books">Books</a></li>
+                            <li><a href="/manage/categories">Categories</a></li>
+                            <li><a href="/" target="_blank">View Site</a></li>
                         </ul>
                     </section>
                 </nav>
