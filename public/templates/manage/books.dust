@@ -16,27 +16,15 @@
         </tr>
       </thead>
       <tbody>
+        {#books}
         <tr>
-          <td>032943290</td>
-          <td>Nodejs Book</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
+          <td>{._id}</td>
+          <td>{.title}</td>
+          <td>{.category}</td>
+          <td><a href="/manage/edit/{._id}" class="button tiny">Edit</a></td>
           <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
         </tr>
-        <tr>
-          <td>032943290</td>
-          <td>Nodejs Book</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
-          <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
-        </tr>        
-        <tr>
-          <td>032943290</td>
-          <td>Nodejs Book</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
-          <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
-        </tr>
+        {/books}
       </tbody>
     </table>
 

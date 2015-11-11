@@ -15,24 +15,14 @@
         </tr>
       </thead>
       <tbody>
+        {#categories}
         <tr>
-          <td>032943290</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
+          <td>{._id}</td>
+          <td>{.name}</td>
+          <td><a href="/manage/edit/{._id}" class="button tiny">Edit</a></td>
           <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
         </tr>
-        <tr>
-          <td>032943290</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
-          <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
-        </tr>        
-        <tr>
-          <td>032943290</td>
-          <td>Nodejs</td>
-          <td><a href="/manage/edit/id" class="button tiny">Edit</a></td>
-          <td><a href="#" class="button tiny alert removeBook">Delete</a></td>
-        </tr>
+        {/categories}
       </tbody>
     </table>
 
