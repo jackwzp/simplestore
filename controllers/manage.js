@@ -5,6 +5,7 @@ var Category = require('../models/category');
 
 
 module.exports = function (router) {
+
     router.get('/', function (req, res) {
         res.render('manage/index');
     });
@@ -127,5 +128,60 @@ module.exports = function (router) {
         
     });
 
+    // Add category GET
+    router.get('/categories/add', function(req, res) {
+        res.render('categories/add');        
+        //res.send("DFJOISD");
+    });
+
+    // Add category POST
+    router.post('/categories', function(req, res) {
+        var name = req.body.name;
+
+        var newCategory = new Category({
+            name: name
+        });
+
+        newCategory.save(function(err) {
+            if(err) throw err;
+            res.redirect('/manage/categories');
+        });
+    });
+
+
+    // Edit Category GET
+    router.get('/categories/edit/:id', function(req, res){
+        Category.findOne({_id: req.params.id}, function(err, category){
+            if (err) throw err;
+            var model = {category: category};
+            res.render('categories/edit', model);
+        });
+    }); 
+
+    // Edit Category POST
+    router.post('/categories/edit/:id', function(req, res){
+        var name = req.body.name;
+        var data = {name: name};
+
+        // TODO: should also update all existing book's category
+        // Book.find({category: name}, function(err, books){
+        //     if(err) throw err;
+        //     book.update
+        // })
+
+        Category.update({_id: req.params.id}, data, function(err){
+            if(err) throw err;
+            res.redirect('/manage/categories');
+        });
+    });
+
+    // Delete Category
+    router.delete('/categories/delete/:id', function(req, res) {
+        Category.remove({_id: req.params.id}, function(err) {
+            if(err) throw err;
+            // this actually doesn't redirect, the window in main.js does
+            res.redirect('/manage/categories');
+        })
+    });
 
 };

@@ -1,0 +1,56 @@
+{>"layouts/master" /}
+{<title}
+    Your Cart
+{/title}
+
+{<body}
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Your Shopping Cart <span><a href="/cart/remove">Empty Cart</a></span></h2>
+            <!-- Check if items are in cart -->
+            {?cart.items}
+                <table>
+                    <thead>
+                        <tr>
+                            <th width='650'>Item</th>
+                            <th width='100'>Quantity</th>
+                            <th width='100'>Total</th>
+                            <th width='100'></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {#cart.items}
+                            <tr>
+                                <td><a href="/books/details/{._id}">{.title}</a></td>
+                                <td>{.qty}</td>
+                                <td>${@math key="{.price}" method="multiply" operand="{.qty}" /}</td>
+                            </tr>
+                        {/cart.items}
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="large-6 columns">
+                        <h4>Total: <strong>${cart.total}</strong></h4>
+                    </div>
+                    <!-- Paypal code -->
+                    <div class="large-6 columns">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="you@youremail.com">
+                        <input type="hidden" name="item_name" value="Bookstore">
+                        <input type="hidden" name="currency_code" value="CAD">
+                        <input type="hidden" name="amount" value="{cart.total}">
+                        <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+                        </form>
+                    </div>
+                </div>
+            {:else}
+                <p>There are no items in your cart</p>
+            {/cart.items}
+        </div>
+    </div>
+    
+
+
+{/body}
